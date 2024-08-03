@@ -18,20 +18,21 @@ function multiply (a,b) {
 }
 
 function divide (a,b) {
-    return a / b;
+    return (a/b).toFixed(4);
 }
 
 function operate (num1, num2, operator) {
+
     switch (operator) {
         case "+":
-            add(num1, num2);
+            return add(num1, num2);
         case "-":
-            subtract(num1, num2);
+            return subtract(num1, num2);
         case "*":
-            multiple(num1, num2);
+            return multiply(num1, num2);
         case "/":
-            divide(num1, num2);
+            return divide(num1, num2);
     }
 }
 
-console.log(operate(1,2,"+"));
+alert(operate(99, 6, "/"));
