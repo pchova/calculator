@@ -6,23 +6,22 @@ let operator;
 
 /* FUNCTIONS */
 function add(a,b) {
-    return a + b;
+    return (a + b).toFixed(4);
 }
 
 function subtract(a,b) {
-    return a - b;
+    return (a - b).toFixed(4);
 }
 
 function multiply (a,b) {
-    return a * b;
+    return (a * b).toFixed(4);
 }
 
 function divide (a,b) {
-    return (a/b).toFixed(4);
+    return (a / b).toFixed(4);
 }
 
 function operate (num1, num2, operator) {
-
     switch (operator) {
         case "+":
             return add(num1, num2);
