@@ -1,0 +1,34 @@
+.container {
+    border: 2px solid black;
+    height: 800px;
+    width: 500px
+}
+
+.display-top {
+    border: 2px solid pink;
+}
+
+.display-bottom {
+    border: 2px solid pink;
+    display: flex;
+    width: 100%;
+}
+
+.left-buttons {
+    border: 4px solid blue;
+}
+
+.right-buttons {
+    border: 4px solid blue;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.numbers {
+    border: 3px solid green;
+}
+
+.equals {
+    border: 3px solid green;
+}

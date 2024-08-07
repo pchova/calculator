@@ -34,4 +34,5 @@ function operate (num1, num2, operator) {
     }
 }
 
-alert(operate(99, 6, "/"));
+//alert(operate(99, 6, "/"));
+
