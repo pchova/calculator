@@ -47,13 +47,30 @@ body {
 
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+}
+
+.clear-button {
+    width: 123.33px;
+    height: 150px;
+
+    display: flex;
+}
+
+.clr {
+    padding: 10%;
+    font-size: x-large;
+    flex: 1;
+}
+
+.math-button {
+    display: flex;
+    flex-direction: column;
+    flex: 2.9999;
 }
 
 .mathoperation {
-    padding: 15px 20px;
     font-size: xx-large;
+    flex: 1;
 }
 
 /* CALCULATOR BUTTONS FOR NUMBERS */
@@ -75,4 +92,8 @@ body {
     padding: 10%;
     width: 33.333%;
     font-size: x-large;
+}
+
+.equals {
+    flex: 2;
 }
