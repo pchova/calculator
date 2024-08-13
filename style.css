@@ -5,9 +5,9 @@ body {
 }
 
 .container {
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
-    border: 2px solid darkgreen;
     height: 800px;
     width: 500px
 }
@@ -15,15 +15,16 @@ body {
 
 /* CALCULATOR DISPLAY AT THE TOP */
 .display-top {
+    border: 1px solid black;
     display: flex;
     flex: 1;
     letter-spacing: 2px;
 }
 
 #display-text {
+    background-color: whitesmoke;
     flex: 1;
-    /*min-height: 100px;*/
-    border: 15px solid darkgrey;
+    border: 20px solid #CBDFBD;
     padding: 10px;
     margin: 0;
     font-size: 90px;
@@ -57,6 +58,8 @@ body {
 }
 
 .clr {
+    background-color: #F6F4D2;
+    border: 1px solid black;
     padding: 10%;
     font-size: x-large;
     flex: 1;
@@ -69,8 +72,10 @@ body {
 }
 
 .mathoperation {
+    background-color: #D4E09B;
     font-size: xx-large;
     flex: 1;
+    border: 1px solid black;
 }
 
 /* CALCULATOR BUTTONS FOR NUMBERS */
@@ -89,11 +94,15 @@ body {
 }
 
 .number {
+    background-color: #F19C79;
+    border: 1px solid black;
     padding: 10%;
     width: 33.333%;
     font-size: x-large;
 }
 
 .equals {
+    background-color: #F6F4D2;
+    font-size: xx-large;
     flex: 2;
 }
