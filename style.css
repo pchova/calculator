@@ -1,34 +1,81 @@
+/*BASE BODY CONTAINER */
+body {
+    display: flex;
+    justify-content: center;
+}
+
 .container {
-    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid darkgreen;
     height: 800px;
     width: 500px
 }
 
+
+/* CALCULATOR DISPLAY AT THE TOP */
 .display-top {
-    border: 2px solid pink;
-}
-
-.display-bottom {
-    border: 2px solid pink;
     display: flex;
-    width: 100%;
-}
-
-.left-buttons {
-    border: 4px solid blue;
-}
-
-.right-buttons {
-    border: 4px solid blue;
-    display: flex;
-    flex-direction: column;
     flex: 1;
 }
 
-.numbers {
-    border: 3px solid green;
+#display-text {
+    flex: 1;
+    /*min-height: 100px;*/
+    border: 15px solid darkgrey;
+    padding: 10px;
+    margin: 0;
+    font-size: 90px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+
+/* BUTTON CONTAINER BELOW THE DISPLAY */
+.display-bottom {
+    flex: 3;
+
+    display: flex;
+}
+
+/* MATHEMATICAL OPERATIONS */
+.left-buttons {
+    border: 2px solid blue;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.mathoperation {
+    padding: 15px 20px;
+    font-size: xx-large;
+}
+
+/* CALCULATOR BUTTONS FOR NUMBERS */
+.right-buttons {
+    border: 2px solid red;
+    flex: 2;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.numbers-container {
+    border: 2px solid pink;
+    flex: 4;
+}
+
+.number {
+    /* padding: 40px 45px; */
+    padding: 15% 14%; 
 }
 
 .equals {
-    border: 3px solid green;
+    border: 2px solid sienna;
+    flex: 1;
 }
