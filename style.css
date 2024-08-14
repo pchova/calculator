@@ -65,6 +65,11 @@ body {
     flex: 1;
 }
 
+.clr:hover {
+    background-color: #F0E9AF;
+    transition: 0.3s;
+}
+
 .math-button {
     display: flex;
     flex-direction: column;
@@ -76,6 +81,11 @@ body {
     font-size: xx-large;
     flex: 1;
     border: 1px solid black;
+}
+
+.mathoperation:hover {
+    background-color: #C0CA8B;
+    transition: 0.3s;
 }
 
 /* CALCULATOR BUTTONS FOR NUMBERS */
@@ -101,8 +111,18 @@ body {
     font-size: x-large;
 }
 
+.number:hover {
+    background-color: #DA8C6D;
+    transition: 0.3s;
+}
+
 .equals {
     background-color: #F6F4D2;
     font-size: xx-large;
     flex: 2;
+}
+
+.equals:hover {
+    background-color: #F0E9AF;
+    transition: 0.3s;
 }

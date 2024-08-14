@@ -3,6 +3,10 @@ let number1;
 let number2;
 let operator;
 
+/* EVENT LISTENERS */
+let display = document.querySelector('#display-text');
+
+
 
 /* FUNCTIONS */
 function add(a,b) {
