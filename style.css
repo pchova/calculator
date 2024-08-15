@@ -1,3 +1,8 @@
+@font-face {
+    font-family: digital-7; 
+    src: url('digital-7/digital-7.ttf');
+}
+
 /*BASE BODY CONTAINER */
 body {
     display: flex;
@@ -5,33 +10,42 @@ body {
 }
 
 .container {
+    background-color: #F0E9AF;
     border: 1px solid black;
+    border-radius: 20px 20px 20px 20px;
     display: flex;
     flex-direction: column;
     height: 800px;
-    width: 500px
+    width: 500px;
+    padding: 10px;
 }
 
 
 /* CALCULATOR DISPLAY AT THE TOP */
 .display-top {
-    border: 1px solid black;
+    font-family: digital-7;
+    background-color: #F6F4D2;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-radius: 20px 20px 0px 0px;
     display: flex;
     flex: 1;
     letter-spacing: 2px;
 }
 
 #display-text {
-    background-color: whitesmoke;
-    flex: 1;
-    border: 20px solid #CBDFBD;
-    padding: 10px;
-    margin: 0;
+    background-color: rgb(125, 140, 115);
+    border-radius: 20px 20px 20px 20px;
+    border: 10px solid #B6C8AA;
+    margin: 18px 15px;
     font-size: 90px;
+    color: rgb(53, 53, 53);
+    flex: 1;
 
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: center;
 }
 
 
@@ -59,7 +73,10 @@ body {
 
 .clr {
     background-color: #F6F4D2;
-    border: 1px solid black;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 0.5px solid black;
+    border-right: 0.5px solid black;
     padding: 10%;
     font-size: x-large;
     flex: 1;
@@ -86,6 +103,10 @@ body {
 .mathoperation:hover {
     background-color: #C0CA8B;
     transition: 0.3s;
+}
+
+#multiplication {
+    border-radius: 0px 0px 0px 20px;
 }
 
 /* CALCULATOR BUTTONS FOR NUMBERS */
@@ -116,13 +137,15 @@ body {
     transition: 0.3s;
 }
 
-.equals {
+#equals {
     background-color: #F6F4D2;
+    border: 1px solid black;
+    border-radius: 0px 0px 20px 0px;
     font-size: xx-large;
     flex: 2;
 }
 
-.equals:hover {
+#equals:hover {
     background-color: #F0E9AF;
     transition: 0.3s;
 }

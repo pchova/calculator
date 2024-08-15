@@ -4,7 +4,17 @@ let number2;
 let operator;
 
 /* EVENT LISTENERS */
-let display = document.querySelector('#display-text');
+const display = document.querySelector('.display-top');
+
+const displayScreen = document.querySelector('#display-text');
+
+displayScreen.textContent = "100 x 800";
+
+
+
+
+
+
 
 
 
