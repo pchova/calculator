@@ -9,6 +9,10 @@ body {
     justify-content: center;
 }
 
+button {
+    cursor: pointer;
+}
+
 .container {
     background-color: #F0E9AF;
     border: 1px solid black;
@@ -18,6 +22,7 @@ body {
     height: 700px;
     width: 500px;
     padding: 30px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.15);
 }
 
 
@@ -29,6 +34,7 @@ body {
     display: flex;
     flex: 1;
     letter-spacing: 1px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.15);
 }
 
 #display-text {
@@ -63,6 +69,7 @@ body {
 .number {
     width: 33.333%;
     border-radius: 100%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.15);
 }
 
 #equals {
@@ -80,6 +87,7 @@ body {
 .mathoperation {
     flex: 1;
     border-radius: 100%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.15);
 }
 
 
