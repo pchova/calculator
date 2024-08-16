@@ -1,21 +1,10 @@
 /* CALCULATOR VARIABLES */
-let number1;
-let number2;
-let operator;
+let number1 = "";
+let number2 = "";
+let operator = "";
 
 /* EVENT LISTENERS */
 const display = document.querySelector('.display-top');
-
-const displayScreen = document.querySelector('#display-text');
-
-displayScreen.textContent = "100 x 800";
-
-
-
-
-
-
-
 
 
 /* FUNCTIONS */
@@ -45,8 +34,7 @@ function operate (num1, num2, operator) {
             return multiply(num1, num2);
         case "/":
             return divide(num1, num2);
+        default:
+            return alert("Error in calculation.");
     }
 }
-
-//alert(operate(99, 6, "/"));
-
