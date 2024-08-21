@@ -9,41 +9,33 @@ const buttons = document.querySelectorAll('button');
 
 buttons.forEach(button => {
     button.addEventListener("click", (event) => {
-        display.textContent = event.target.textContent;
+        value1 = event.target.textContent;
+        display.textContent = value1;
+        console.log(value1);
     })
 })
-
-
-
-
 
 
 /* Attempt 2 
 ** displays any clicked button on the display! only one at a time
 
 const display = document.querySelector('#display-text');
-const numberContainer = document.querySelectorAll('.number-container');
-const mathContainer = document.querySelectorAll('.math-container');
 
+
+const numberContainer = document.querySelectorAll('.number-container');
 Array.from(numberContainer).forEach(button => 
     button.addEventListener("click", showNumber));
 
+const mathContainer = document.querySelectorAll('.math-container');
 Array.from(mathContainer).forEach(button => 
     button.addEventListener("click", showNumber));
+
 
 function showNumber(event) {
     const button = event.target;
     display.textContent = button.textContent;
 } 
 */
-
-
-/* Attempt 1 
-const numberContainer = document.querySelectorAll('.number-container');
-numberContainer.forEach(button => button.addEventListener('click', logText));
-
-const mathContainer = document.querySelectorAll('.math-container');
-mathContainer.forEach(button => button.addEventListener('click', logText)); */
 
 
 /* FUNCTIONS */
