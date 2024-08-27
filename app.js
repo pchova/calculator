@@ -31,6 +31,18 @@ function buttonClick(event) {
         case classList.contains('number'):
             inputNumber(target.textContent);
             break;
+        
+        case classList.contains('equals'):
+            operate(target.textContent);
+            break;
+        
+        case classList.contains('clear'):
+            //function here
+            break;
+        
+        case classList.contains('mathoperation'):
+            //function here
+            break;
     }
 }
 
@@ -126,11 +138,4 @@ function operate (num1, num2, operator) {
             return alert("Error in calculation.");
     }
 }
-
-/*
-console.log(operate(2,4,"&#43;"));
-console.log(operate(2,4, "&#8722;"));
-console.log(operate(2,4, "&times;"));
-console.log(operate(2,4, "&divide;"));
-*/
 
