@@ -1,12 +1,10 @@
-@font-face {
-    font-family: digital-7; 
-    src: url('digital-7/digital-7.ttf');
-}
-
 /*BASE BODY CONTAINER */
 body {
     display: flex;
     justify-content: center;
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 button {
@@ -33,7 +31,6 @@ button {
     border-radius: 20px 20px 20px 20px;
     display: flex;
     flex: 1;
-    letter-spacing: 1px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.15);
 }
 
@@ -72,8 +69,11 @@ button {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.15);
 }
 
-#equals {
+.equals {
     flex: 2;
+    width: 33.333%;
+    border-radius: 100%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.15);
 }
 
 .math-container {
@@ -114,13 +114,13 @@ button {
     transition: 0.3s;
 }
 
-#equals {
+.equals {
     background-color: #F6F4D2;
     border: 1px solid #49493E;
     font-size: x-large;
 }
 
-#equals:hover {
+.equals:hover {
     background-color: #F0E9AF;
     transition: 0.3s;
 }
