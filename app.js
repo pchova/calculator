@@ -11,11 +11,12 @@ function updateDisplay() {
     display.textContent = displayValue;
 }
 
-function clearDisplay(clearBtn) {
-    if(clearBtn === 'AC') {
-        display.textContent = "";
-        displayValue = "0";
-    }
+function clearDisplay() {
+    display.textContent = "";
+    displayValue = "0";
+    operator = "";
+    number1 = "";
+    number2 = "";
 }
 
 function inputNumber(number) {
@@ -29,6 +30,24 @@ function inputNumber(number) {
     updateDisplay();
 }
 
+function inputOperator(mathoperation) {
+    if (operator !== "") return;
+
+    if (operator === "") {
+        operator = mathoperation;
+        displayValue += mathoperation;
+    } 
+
+    updateDisplay();
+
+    /*
+    operator = mathoperation;
+    displayValue += mathoperation;
+    if (operator !== "") return;
+    updateDisplay();
+    */
+}
+
 function buttonClick(event) {
     const target = event.target;
     const classList = target.classList;
@@ -40,15 +59,15 @@ function buttonClick(event) {
             break;
         
         case classList.contains('mathoperation'):
-            //function here
+            inputOperator(target.textContent);
             break;
         
         case classList.contains('equals'):
-            operate(target.textContent);
+            operate(number1, number2, operator);
             break;
         
         case classList.contains('clear'):
-            clearDisplay(target.textContent);
+            clearDisplay();
             break;
     }
 }
@@ -78,7 +97,7 @@ function divide (a,b) {
 function operate (num1, num2, operator) {
     switch (operator) {
         case "&#43;":
-            return add(parseFloat(num1), parseFloat(num2));
+            displayValue.textContent = add(parseFloat(num1), parseFloat(num2));
         case "&#8722;":
             return subtract(num1, num2);
         case "&times;":
