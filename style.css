@@ -42,7 +42,6 @@ button {
     font-size: 85px;
     color: rgb(53, 53, 53);
     flex: 1;
-
     display: flex;
     justify-content: flex-end;
     align-items: end;
@@ -67,6 +66,14 @@ button {
     width: 33.333%;
     border-radius: 100%;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.15);
+    background-color: #F19C79;
+    border: 1px solid #492F24;
+    font-size: x-large;
+}
+
+.number:hover {
+    background-color: #DA8C6D;
+    transition: 0.3s;
 }
 
 .equals {
@@ -74,6 +81,14 @@ button {
     width: 33.333%;
     border-radius: 100%;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.15);
+    background-color: #F6F4D2;
+    border: 1px solid #49493E;
+    font-size: x-large;
+}
+
+.equals:hover {
+    background-color: #F0E9AF;
+    transition: 0.3s;
 }
 
 .math-container {
@@ -88,22 +103,6 @@ button {
     flex: 1;
     border-radius: 100%;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.15);
-}
-
-
-/* CALCULATOR DISPLAY BOTTOM BUTTONS STYLING */
-.number {
-    background-color: #F19C79;
-    border: 1px solid #492F24;
-    font-size: x-large;
-}
-
-.number:hover {
-    background-color: #DA8C6D;
-    transition: 0.3s;
-}
-
-.mathoperation {
     background-color: #D4E09B;
     border: 1px solid #40432E;
     font-size: x-large;
@@ -114,24 +113,16 @@ button {
     transition: 0.3s;
 }
 
-.equals {
+.clear {
     background-color: #F6F4D2;
     border: 1px solid #49493E;
     font-size: x-large;
+    flex: 1;
+    border-radius: 100%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.15);
 }
 
-.equals:hover {
-    background-color: #F0E9AF;
-    transition: 0.3s;
-}
-
-#clear {
-    background-color: #F6F4D2;
-    border: 1px solid #49493E;
-    font-size: x-large;
-}
-
-#clear:hover {
+.clear:hover {
     background-color: #F0E9AF;
     transition: 0.3s;
 }

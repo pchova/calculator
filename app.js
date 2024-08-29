@@ -11,6 +11,13 @@ function updateDisplay() {
     display.textContent = displayValue;
 }
 
+function clearDisplay(clearBtn) {
+    if(clearBtn === 'AC') {
+        display.textContent = "";
+        displayValue = "0";
+    }
+}
+
 function inputNumber(number) {
     if (number === '.' && displayValue.includes('.')) return;
 
@@ -32,16 +39,16 @@ function buttonClick(event) {
             inputNumber(target.textContent);
             break;
         
+        case classList.contains('mathoperation'):
+            //function here
+            break;
+        
         case classList.contains('equals'):
             operate(target.textContent);
             break;
         
         case classList.contains('clear'):
-            //function here
-            break;
-        
-        case classList.contains('mathoperation'):
-            //function here
+            clearDisplay(target.textContent);
             break;
     }
 }
@@ -51,77 +58,21 @@ buttons.forEach(button => {
 });
 
 
-
-/* EVENT LISTENERS */
-/* EVENT LISTENER FOR ALL BUTTONS 
-
-const display = document.querySelector('#display-text');
-
-const numberContainer = document.querySelectorAll('.number-container');
-Array.from(numberContainer).forEach(button => 
-    button.addEventListener("click", (event) => {
-        number1 = event.target.textContent;
-        display.textContent = number1;
-        console.log(event.target);
-    }));
-
-const mathContainer = document.querySelectorAll('.math-container');
-Array.from(mathContainer).forEach(button => 
-    button.addEventListener("click", (event) => {
-        operator = event.target.textContent;
-        display.textContent = operator;
-        console.log(event.target);
-    }));
-
-
-const display = document.querySelector('#display-text');
-const buttons = document.querySelectorAll('button');
-
-buttons.forEach(button => {
-    button.addEventListener("click", (event) => {
-        value1 = event.target.textContent;
-        display.textContent = value1;
-    })
-}) */
-
-
-/* Attempt 2 
-** displays any clicked button on the display! only one at a time
-
-const display = document.querySelector('#display-text');
-
-const numberContainer = document.querySelectorAll('.number-container');
-Array.from(numberContainer).forEach(button => 
-    button.addEventListener("click", showNumber));
-
-const mathContainer = document.querySelectorAll('.math-container');
-Array.from(mathContainer).forEach(button => 
-    button.addEventListener("click", showNumber));
-
-
-function showNumber(event) {
-    const button = event.target;
-    display.textContent = button.textContent;
-}
-*/
-
-
-
-/* FUNCTIONS */
+/* MATH FUNCTIONS */
 function add(a,b) {
-    return (a + b).toFixed(4);
+    return (a + b).toFixed(3);
 }
 
 function subtract(a,b) {
-    return (a - b).toFixed(4);
+    return (a - b).toFixed(3);
 }
 
 function multiply (a,b) {
-    return (a * b).toFixed(4);
+    return (a * b).toFixed(3);
 }
 
 function divide (a,b) {
-    return (a / b).toFixed(4);
+    return (a / b).toFixed(3);
 }
 
 function operate (num1, num2, operator) {
