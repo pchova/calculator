@@ -59,14 +59,18 @@ function operate (num1, num2, operator) {
     console.log("operator = " + operator);
 
     switch (operator) {
-        case "&#43;":
-            displayValue.textContent = add(parseFloat(num1), parseFloat(num2));
-        case "&#8722;":
-            displayValue.textContent = subtract(num1, num2);
-        case "&times;":
-            displayValue.textContent = multiply(num1, num2);
-        case "&divide;":
-            displayValue.textContent = divide(num1, num2);
+        case "+":
+            add(parseFloat(num1), parseFloat(num2));
+            break;
+        case "−":
+            subtract(num1, num2);
+            break;
+        case "×":
+            multiply(num1, num2);
+            break;
+        case "÷":
+            divide(num1, num2);
+            break;
         default:
             return alert("Error in calculation.");
     }
@@ -74,19 +78,23 @@ function operate (num1, num2, operator) {
 
 /* MATH FUNCTIONS */
 function add(a,b) {
-    return (a + b).toFixed(3);
+    displayValue = (a + b).toFixed(3);
+    updateDisplay();
 }
 
 function subtract(a,b) {
-    return (a - b).toFixed(3);
+    displayValue = (a - b).toFixed(3);
+    updateDisplay();
 }
 
 function multiply (a,b) {
-    return (a * b).toFixed(3);
+    displayValue = (a * b).toFixed(3);
+    updateDisplay();
 }
 
 function divide (a,b) {
-    return (a / b).toFixed(3);
+    displayValue = (a / b).toFixed(3);
+    updateDisplay();
 }
 
 
