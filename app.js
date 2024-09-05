@@ -22,7 +22,7 @@ function clearDisplay() {
 }
 
 function inputNumber(number) {
-    if (number === '.' && displayValue.includes('.')) return; 
+    if (number === '.' && isOperatorClicked === false && displayValue.includes('.')) return; 
 
     if (displayValue === '0') {
         displayValue = number;
@@ -32,11 +32,15 @@ function inputNumber(number) {
     updateDisplay();
 
     if(isOperatorClicked === true) {
-        array = displayValue.split(operator);
+        let array = displayValue.split(operator);
         number1 = array[0];
     }
 }
 
+function getNumber2() {
+    let arr = displayValue.split(operator);
+    number2 = arr[1];
+}
 
 function inputOperator(mathoperation) {
     if (operator !== "") return;
@@ -58,11 +62,11 @@ function operate (num1, num2, operator) {
         case "&#43;":
             displayValue.textContent = add(parseFloat(num1), parseFloat(num2));
         case "&#8722;":
-            return subtract(num1, num2);
+            displayValue.textContent = subtract(num1, num2);
         case "&times;":
-            return multiply(num1, num2);
+            displayValue.textContent = multiply(num1, num2);
         case "&divide;":
-            return divide(num1, num2);
+            displayValue.textContent = divide(num1, num2);
         default:
             return alert("Error in calculation.");
     }
@@ -101,6 +105,7 @@ function buttonClick(event) {
             break;
         
         case classList.contains('equals'):
+            getNumber2();
             operate(number1, number2, operator);
             break;
         
