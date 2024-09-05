@@ -78,23 +78,35 @@ function operate (num1, num2, operator) {
 
 /* MATH FUNCTIONS */
 function add(a,b) {
-    displayValue = (a + b).toFixed(3);
+    displayValue = (a + b);
     updateDisplay();
+
+    //to perform an operation with the answer as number1
+    operator = "";
 }
 
 function subtract(a,b) {
-    displayValue = (a - b).toFixed(3);
+    displayValue = (a - b);
     updateDisplay();
+
+    //to perform an operation with the answer as number1
+    operator = "";
 }
 
 function multiply (a,b) {
-    displayValue = (a * b).toFixed(3);
+    displayValue = (a * b);
     updateDisplay();
+
+    //to perform an operation with the answer as number1
+    operator = "";
 }
 
 function divide (a,b) {
-    displayValue = (a / b).toFixed(3);
+    displayValue = (a / b);
     updateDisplay();
+
+    //to perform an operation with the answer as number1
+    operator = "";
 }
 
 
