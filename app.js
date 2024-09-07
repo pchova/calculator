@@ -2,7 +2,7 @@
 let number1 = "";
 let number2 = "";
 let operator = "";
-let displayValue = "0";
+let displayValue = "";
 let isOperatorClicked = false;
 
 const display = document.querySelector('#display-text');
@@ -14,7 +14,7 @@ function updateDisplay() {
 
 function clearDisplay() {
     display.textContent = "";
-    displayValue = "0";
+    displayValue = "";
     operator = "";
     number1 = "";
     number2 = "";
@@ -28,10 +28,10 @@ function inputNumber(number) {
         let array = displayValue.split(operator);
         number1 = array[0];
 
-        if (number === '.' && array[1].includes('.')) return; 
+        if (number === '.' && array[1].includes('.')) return;
     }
 
-    if (displayValue === '0') {
+    if (displayValue === '') {
         displayValue = number;
     } else {
         displayValue += number;
@@ -81,7 +81,11 @@ function operate (num1, num2, operator) {
 /* MATH FUNCTIONS */
 function add(a,b) {
     displayValue = (a + b);
-    displayValue = Math.round(displayValue * 100 + Number.EPSILON ) / 100;
+
+    if (String(displayValue).includes(".")) {
+        displayValue = Math.trunc(displayValue * 100) / 100;
+    }
+
     updateDisplay();
 
     //to perform an operation with the answer as number1
@@ -90,7 +94,9 @@ function add(a,b) {
 
 function subtract(a,b) {
     displayValue = (a - b);
-    displayValue = Math.round(displayValue * 100 + Number.EPSILON ) / 100;
+    if (String(displayValue).includes(".")) {
+        displayValue = Math.trunc(displayValue * 100) / 100;
+    }
     updateDisplay();
 
     //to perform an operation with the answer as number1
@@ -99,7 +105,9 @@ function subtract(a,b) {
 
 function multiply (a,b) {
     displayValue = (a * b);
-    displayValue = Math.round(displayValue * 100 + Number.EPSILON ) / 100;
+    if (String(displayValue).includes(".")) {
+        displayValue = Math.trunc(displayValue * 100) / 100;
+    }
     updateDisplay();
 
     //to perform an operation with the answer as number1
@@ -108,7 +116,9 @@ function multiply (a,b) {
 
 function divide (a,b) {
     displayValue = (a / b);
-    displayValue = Math.round(displayValue * 100 + Number.EPSILON ) / 100;
+    if (String(displayValue).includes(".")) {
+        displayValue = Math.trunc(displayValue * 100) / 100;
+    }
     updateDisplay();
 
     //to perform an operation with the answer as number1
