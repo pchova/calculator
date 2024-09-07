@@ -24,17 +24,19 @@ function clearDisplay() {
 function inputNumber(number) {
     if (number === '.' && isOperatorClicked === false && displayValue.includes('.')) return; 
 
+    if(isOperatorClicked === true) {
+        let array = displayValue.split(operator);
+        number1 = array[0];
+
+        if (number === '.' && array[1].includes('.')) return; 
+    }
+
     if (displayValue === '0') {
         displayValue = number;
     } else {
         displayValue += number;
     }
     updateDisplay();
-
-    if(isOperatorClicked === true) {
-        let array = displayValue.split(operator);
-        number1 = array[0];
-    }
 }
 
 function getNumber2() {
