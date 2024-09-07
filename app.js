@@ -1,4 +1,4 @@
-/* CALCULATOR VARIABLES */
+/* CALCULATOR VARIABLES AND SELECTORS */
 let number1 = "";
 let number2 = "";
 let operator = "";
@@ -8,10 +8,12 @@ let isOperatorClicked = false;
 const display = document.querySelector('#display-text');
 const buttons = document.querySelectorAll('button');
 
+/* updateDisplay() appends the str displayValue to display on the calculator screen */
 function updateDisplay() {
     display.textContent = displayValue;
 }
 
+/* clearDisplay() re-initializes all variables and the display to be empty */
 function clearDisplay() {
     display.textContent = "";
     displayValue = "";
@@ -21,6 +23,11 @@ function clearDisplay() {
     isOperatorClicked = false;
 }
 
+/* inputNumber() accepts a number from a button clicked and adds it to displayValue.
+** while boolean=false, num can only have one decimal
+** while boolean=true, num is assigned to the var number1 and one more decimal can be added for the second num
+** else add button clicked to displayValue string
+*/
 function inputNumber(number) {
     if (number === '.' && isOperatorClicked === false && displayValue.includes('.')) return; 
 
@@ -39,11 +46,17 @@ function inputNumber(number) {
     updateDisplay();
 }
 
+/* getNumber2() runs after user clicks equal button; numbers inputted after operator in displayValue
+** are assigned to var number2
+*/
 function getNumber2() {
     let arr = displayValue.split(operator);
     number2 = arr[1];
 }
 
+/* inputOperator() accepts a button click to assign a math operation to the variable operator
+** Once operator is initialized, boolean=true
+*/
 function inputOperator(mathoperation) {
     if (operator !== "") return;
 
@@ -55,11 +68,8 @@ function inputOperator(mathoperation) {
     updateDisplay();
 }
 
+/* operate() runs when user clicks equals, and after getNumber2() runs */
 function operate (num1, num2, operator) {
-    console.log("number1 = " + number1);
-    console.log("number2 = " + number2);
-    console.log("operator = " + operator);
-
     switch (operator) {
         case "+":
             add(parseFloat(num1), parseFloat(num2));
@@ -85,47 +95,45 @@ function add(a,b) {
     if (String(displayValue).includes(".")) {
         displayValue = Math.trunc(displayValue * 100) / 100;
     }
-
     updateDisplay();
-
-    //to perform an operation with the answer as number1
+    /* operator gets set to empty str so the answer of the just
+    computed equation is set to number1 unless user clicks 'AC'  */
     operator = "";
 }
 
 function subtract(a,b) {
     displayValue = (a - b);
+
     if (String(displayValue).includes(".")) {
         displayValue = Math.trunc(displayValue * 100) / 100;
     }
     updateDisplay();
-
-    //to perform an operation with the answer as number1
     operator = "";
 }
 
 function multiply (a,b) {
     displayValue = (a * b);
+
     if (String(displayValue).includes(".")) {
         displayValue = Math.trunc(displayValue * 100) / 100;
     }
     updateDisplay();
-
-    //to perform an operation with the answer as number1
     operator = "";
 }
 
 function divide (a,b) {
     displayValue = (a / b);
+
     if (String(displayValue).includes(".")) {
         displayValue = Math.trunc(displayValue * 100) / 100;
     }
     updateDisplay();
-
-    //to perform an operation with the answer as number1
     operator = "";
 }
 
-
+/* buttonClick() - an event handler that runs functions depending on 
+** which class of buttons were clicked 
+*/
 function buttonClick(event) {
     const target = event.target;
     const classList = target.classList;
@@ -151,6 +159,7 @@ function buttonClick(event) {
     }
 }
 
+/* Event Listener */
 buttons.forEach(button => {
     button.addEventListener("click", buttonClick);
 });
