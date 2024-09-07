@@ -79,6 +79,7 @@ function operate (num1, num2, operator) {
 /* MATH FUNCTIONS */
 function add(a,b) {
     displayValue = (a + b);
+    displayValue = Math.round(displayValue * 100 + Number.EPSILON ) / 100;
     updateDisplay();
 
     //to perform an operation with the answer as number1
@@ -87,6 +88,7 @@ function add(a,b) {
 
 function subtract(a,b) {
     displayValue = (a - b);
+    displayValue = Math.round(displayValue * 100 + Number.EPSILON ) / 100;
     updateDisplay();
 
     //to perform an operation with the answer as number1
@@ -95,6 +97,7 @@ function subtract(a,b) {
 
 function multiply (a,b) {
     displayValue = (a * b);
+    displayValue = Math.round(displayValue * 100 + Number.EPSILON ) / 100;
     updateDisplay();
 
     //to perform an operation with the answer as number1
@@ -103,6 +106,7 @@ function multiply (a,b) {
 
 function divide (a,b) {
     displayValue = (a / b);
+    displayValue = Math.round(displayValue * 100 + Number.EPSILON ) / 100;
     updateDisplay();
 
     //to perform an operation with the answer as number1
