@@ -122,7 +122,11 @@ function multiply (a,b) {
 }
 
 function divide (a,b) {
-    displayValue = (a / b);
+    if (b == 0) {
+        return alert("You cannot divide a number by 0. Please clear the display and try again.")
+    } else {
+        displayValue = (a / b);
+    }
 
     if (String(displayValue).includes(".")) {
         displayValue = Math.trunc(displayValue * 100) / 100;
