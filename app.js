@@ -122,8 +122,9 @@ function multiply (a,b) {
 }
 
 function divide (a,b) {
-    if (b == 0) {
-        return alert("You cannot divide a number by 0. Please clear the display and try again.")
+    if (b == 0 || (b.includes('0') && !b.includes('.'))) {
+        clearDisplay();
+        return alert("You cannot divide a number by 0. Please try your calculation again.");
     } else {
         displayValue = (a / b);
     }
@@ -166,5 +167,51 @@ function buttonClick(event) {
 /* Event Listener */
 buttons.forEach(button => {
     button.addEventListener("click", buttonClick);
+});
+
+/* Keyboard Integration */
+var unfocusedButtons = document.querySelectorAll('button');
+unfocusedButtons.forEach(function (el) { el.setAttribute('tabindex', '-1'); });
+
+document.addEventListener('keydown', function(event) {
+    /*this prevents errors from the tabbing navigation when using 
+    a combination of keyboard input and manual clicks*/
+    event.preventDefault();
+
+    const keyName = event.key;
+
+    const numberKeys = 
+        [
+        '0', '1', '2', 
+        '3', '4', '5', 
+        '6', '7', '8', 
+        '9', '0', '.'
+        ]
+
+    switch (keyName) {
+        case numberKeys.find(key => key === keyName):
+            inputNumber(keyName);
+            console.log(keyName);
+            break;
+        case '+':
+            inputOperator('+');
+            break;
+        case '-':
+            inputOperator('−');
+            break;
+        case '*':
+            inputOperator('×');
+            break;
+        case '/':
+            inputOperator('÷');
+            break;
+        case 'Enter':
+            getNumber2();
+            operate(number1, number2, operator);
+            break;
+        case 'Escape':
+            clearDisplay();
+            break;
+    }
 });
 
